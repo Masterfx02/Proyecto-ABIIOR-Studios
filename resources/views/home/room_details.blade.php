@@ -4,6 +4,18 @@
          <base href="/public">
 
 @include('home.css')
+<style type="text/css">
+    label
+    {
+        display: inline-block;
+        width: 200px;
+    }
+    
+    input
+    {
+        width: 100%;
+    }
+</style>
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -43,10 +55,61 @@
                   </div>
                </div>
 
+                <div class="col-md-4">
+                    <h1 style="font-size: 40px;">¡Agenda tu estudio!</h1>
+                    <div>
+                        <label>Nombre</label>
+                        <input type="text" name="name">
+                    </div>
+                    
+                    <div>
+                        <label>Email</label>
+                        <input type="email" name="email">
+                    </div>
+                    
+                    <div>
+                        <label>Fecha de inicio:</label>
+                        <input type="date" name="startDate" id="startDate">
+                    </div>
+                    
+                    <div>
+                        <label>Fecha de finalización:</label>
+                        <input type="date" name="endDate" id="endDate">
+                    </div>
+                    
+                    <div style="padding-top: 20px">
+                        <input type="submit" class="btn btn-primary" value="Agendar estudio"name="name">
+                    </div>
+
+                </div>
+
             </div>
          </div>
       </div>
 
       @include('home.footer')
+      
+      <script type="text/javascript">
+        $(function(){
+            var dtToday = new Date();
+        
+            var month = dtToday.getMonth() + 1;
+
+            var day = dtToday.getDate();
+
+            var year = dtToday.getFullYear();
+
+            if(month < 10)
+                month = '0' + month.toString();
+
+            if(day < 10)
+            day = '0' + day.toString();
+
+            var maxDate = year + '-' + month + '-' + day;
+            $('#startDate').attr('min', maxDate);
+            $('#endDate').attr('min', maxDate);
+
+        });
+      </script>
    </body>
 </html>
