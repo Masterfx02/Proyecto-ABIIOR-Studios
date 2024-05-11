@@ -36,7 +36,7 @@
           </div>
 
           <div class="div_center">
-            <h1 style="font-size: 30px; font-width: bold">Modificar Sala</h1>
+            <h1 style="font-size: 30px; font-weight: bold">Modificar Sala</h1>
             <form action="{{url('edit_room', $data->id)}}" method="Post" enctype="multipart/form-data">
                 @csrf 
                 <div class="div_deg">

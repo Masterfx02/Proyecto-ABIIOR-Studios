@@ -57,14 +57,33 @@
 
                 <div class="col-md-4">
                     <h1 style="font-size: 40px;">¡Agenda tu estudio!</h1>
+                    @if($errors)
+
+                    @foreach($errors->all() as $errors)
+                    <li style="color:red">
+                     {{$errors}}
+                    </li>
+                    @endforeach
+                    @endif
+
+                     <form action="{{url('add_booking', $room->id)}}" method="Post">
+                        @csrf
+
                     <div>
                         <label>Nombre</label>
-                        <input type="text" name="name">
+                        <input type="text" name="name" 
+                        @if(Auth::id())
+                           value="{{Auth::user()->name}}"
+                        @endif>
                     </div>
                     
                     <div>
                         <label>Email</label>
-                        <input type="email" name="email">
+                        <input type="email" name="email"
+                        @if(Auth::id())
+                           value="{{Auth::user()->email}}"
+                        @endif>
+                        >
                     </div>
                     
                     <div>
@@ -78,8 +97,10 @@
                     </div>
                     
                     <div style="padding-top: 20px">
-                        <input type="submit" class="btn btn-primary" value="Agendar estudio"name="name">
+                        <input type="submit" class="btn btn-primary" value="Agendar estudio">
                     </div>
+                    </form>                    
+
 
                 </div>
 
