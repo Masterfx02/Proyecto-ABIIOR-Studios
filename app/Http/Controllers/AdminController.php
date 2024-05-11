@@ -53,7 +53,7 @@ class AdminController extends Controller
         {
             $imagename=time().'.'.$image->getClientOriginalExtension();
             $request->image->move('room', $imagename);
-            $   data->image=$imagename;
+            $data->image=$imagename;
         }
 
         $data -> save();
