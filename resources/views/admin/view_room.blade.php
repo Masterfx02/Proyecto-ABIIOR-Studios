@@ -38,7 +38,8 @@
                     <th class="th_deg">Precio</th>
                     <th class="th_deg">Tipo de Sala</th>
                     <th class="th_deg">Imagen</th>
-                    <th class="th_deg"></th>
+                    <th class="th_deg">   </th>
+                    <th class="th_deg">   </th>
                     
                     @foreach($data as $data)
                     <tr>
@@ -51,6 +52,9 @@
                         </td>
                         <td>
                             <a onclick="return confirm('¿Deseas eliminar la sala?');" class="btn btn-danger"href="{{url('room_delete', $data->id)}}">Eliminar</a>
+                        </td>
+                        <td>
+                            <a class="btn btn-warning" href="{{url('room_update', $data->id)}}">Modificar</a>
                         </td>
                     </tr>
                     @endforeach
