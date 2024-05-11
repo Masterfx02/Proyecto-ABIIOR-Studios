@@ -4,6 +4,7 @@
          <base href="/public">
 
 @include('home.css')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 <style type="text/css">
     label
     {
@@ -43,7 +44,7 @@
                <div class="col-md-8">
                   <div id="serv_hover"  class="room">
                      <div style="padding:20px" class="room_img">
-                        <img style="height:450px; width:710px" src="/room/{{$room->image}}" alt=""/>
+                        <img style="height:450px; width:710px" src="/room/{{$room->image}}" alt="#"/>
                      </div> 
                      <div class="bed_room">
                         <h1>{{$room->room_title}}</h1>
@@ -57,6 +58,13 @@
 
                 <div class="col-md-4">
                     <h1 style="font-size: 40px;">¡Agenda tu estudio!</h1>
+                  <div>
+                     @if(session()->has('message'))
+                        <div class="alert alert-success">
+                        {{session()->get('message')}}
+                        </div>
+                     @endif
+                  </div>
                     @if($errors)
 
                     @foreach($errors->all() as $errors)
@@ -83,7 +91,7 @@
                         @if(Auth::id())
                            value="{{Auth::user()->email}}"
                         @endif>
-                        >
+                        
                     </div>
                     
                     <div>
@@ -132,5 +140,6 @@
 
         });
       </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
    </body>
 </html>
