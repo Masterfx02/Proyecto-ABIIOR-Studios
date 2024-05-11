@@ -16,7 +16,7 @@
                 <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-windows"></i>Salas de Estudio</a>
                   <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
                     <li><a href="{{url('create_room')}}">Agregar salas</a></li>
-                    <li><a href="#">Page</a></li>
+                    <li><a href="{{url('view_room')}}">Ver salas</a></li>
                     <li><a href="#">Page</a></li>
                   </ul>
                 </li>
