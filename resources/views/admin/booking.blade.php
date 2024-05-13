@@ -55,7 +55,19 @@
                         <td>{{$data->end_date}}</td>
                         <td>{{$data->room->room_title}}</td>
                         <td>{{$data->room->price}}</td>
-                        <td>{{$data->status}}</td>
+                        <td>
+                            @if($data->status == 'Aprobado')
+                            <span style="color: skyblue";>Aprobado</span>
+                            @endif
+                            
+                            @if($data->status == 'Rechazado')
+                            <span style="color: red";>Rechazado</span>
+                            @endif
+                            
+                            @if($data->status == 'waiting')
+                            <span style="color: yellow";>En espera</span>
+                            @endif
+                        </td>
                         <td>
                             <a onclick="return confirm('¿Deseas eliminar la cita?')"; class="btn btn-danger" href="{{url('delete_booking', $data->id)}}">Eliminar</a>
                         </td>
