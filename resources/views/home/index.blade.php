@@ -3,6 +3,7 @@
    <head>
       
 @include('home.css')
+
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -37,5 +38,6 @@
       <!-- end contact -->
       <!--  footer -->
       @include('home.footer')
+      
    </body>
 </html>
