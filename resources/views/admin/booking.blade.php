@@ -42,6 +42,7 @@
                     <th class="th_deg">Fecha Final</th>
                     <th class="th_deg">Sala</th>
                     <th class="th_deg">Precio</th>
+                    <th class="th_deg">Status</th>
                     <th class="th_deg"></th>
                 
                 @foreach($data as $data)
@@ -53,7 +54,12 @@
                         <td>{{$data->end_date}}</td>
                         <td>{{$data->room->room_title}}</td>
                         <td>{{$data->room->price}}</td>
+                        <td>{{$data->status}}</td>
+                        <td>
+                            <a onclick="return confirm('¿Deseas eliminar la cita?')"; class="btn btn-danger" href="{{url('delete_booking', $data->id)}}">Eliminar</a>
+                        </td>
                     </tr>
+                    
                 </tr>
                 @endforeach
             </table>
