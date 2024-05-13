@@ -3,7 +3,7 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
-                     <h2>gallery</h2>
+                     <h2>Galería</h2>
                   </div>
                </div>
             </div>

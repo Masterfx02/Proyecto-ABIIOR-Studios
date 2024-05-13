@@ -5,8 +5,8 @@
         <div class="sidebar-header d-flex align-items-center">
           <div class="avatar"><img src="admin/img/avatar-6.jpg" alt="..." class="img-fluid rounded-circle"></div>
           <div class="title">
-            <h1 class="h5">Mark Stephen</h1>
-            <p>Web Designer</p>
+            <h1 class="h5">Yeshua Espinoza</h1>
+            <p>Administrador</p>
           </div>
         </div>
         <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
@@ -21,6 +21,9 @@
                 </li>
                 <li>
                   <a href="{{url('bookings')}}"> <i class="icon-home"></i>Reservaciones</a>
+                </li>
+                <li>
+                  <a href="{{url('view_gallery')}}"> <i class="icon-home"></i>Galería</a>
                 </li>
 
                 

@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Room;
 use App\Models\Booking;
+use App\Models\Gallery;
 
 class AdminController extends Controller
 {
@@ -133,6 +134,34 @@ class AdminController extends Controller
         $booking->status='Rechazado';
         $booking->save();
 
+        return redirect()->back();
+    }
+    
+    public function view_gallery()
+    {
+        $gallery = Gallery::all();
+        return view('admin.gallery', compact('gallery'));
+    }
+    
+    public function upload_gallery(Request $request)
+    {
+        $data = new Gallery;
+        $image = $request->image;
+        if($image)
+        {
+            $imagename=time().'.'.$image->getClientOriginalExtension();
+            $request->image->move('gallery', $imagename);
+            $data->image = $imagename;
+            $data -> save();
+
+            return redirect()->back();
+        }
+    }
+
+    public function delete_gallery($id)
+    {
+        $data = Gallery::find($id);
+        $data -> delete();
         return redirect()->back();
     }
 }
