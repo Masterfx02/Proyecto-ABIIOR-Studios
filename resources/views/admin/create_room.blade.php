@@ -34,7 +34,7 @@
           </div>
 
           <div class="div_center">
-            <h1 style="font-size: 30px; font-width: bold">Agregar Sala</h1>
+            <h1 style="font-size: 30px; font-weight: bold">Agregar Sala</h1>
             <form action="{{url('add_room')}}" method="Post" enctype="multipart/form-data">
                 @csrf 
                 <div class="div_deg">
