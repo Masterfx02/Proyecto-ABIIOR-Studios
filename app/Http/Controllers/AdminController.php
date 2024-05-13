@@ -117,4 +117,13 @@ class AdminController extends Controller
 
         return redirect()->back();
     }
+    
+    public function approve_book($id)
+    {
+        $booking = Booking::find($id);
+        $booking->status='Aprobado';
+        $booking->save();
+
+        return redirect()->back();
+    }
 }

@@ -15,7 +15,7 @@
         .th_deg
         {
             background-color: black;
-            padding: 15px;
+            padding: 10px;
         }
 
         .tr
@@ -44,6 +44,7 @@
                     <th class="th_deg">Precio</th>
                     <th class="th_deg">Status</th>
                     <th class="th_deg"></th>
+                    <th class="th_deg">Actualizar Status</th>
                 
                 @foreach($data as $data)
                     <tr>
@@ -57,6 +58,12 @@
                         <td>{{$data->status}}</td>
                         <td>
                             <a onclick="return confirm('¿Deseas eliminar la cita?')"; class="btn btn-danger" href="{{url('delete_booking', $data->id)}}">Eliminar</a>
+                        </td>
+                        <td>
+                            <span style="padding-bottom:10px">
+                                <a class="btn btn-success" href="{{url('approve_book', $data->id)}}">Aprobar</a>
+                            </span>
+                            <a class="btn btn-warning" href="{{url('reject_book', $data->id)}}">Rechazar</a>
                         </td>
                     </tr>
                     
