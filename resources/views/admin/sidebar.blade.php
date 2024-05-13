@@ -19,11 +19,17 @@
                     <li><a href="{{url('view_room')}}">Ver salas</a></li>
                   </ul>
                 </li>
+                
                 <li>
                   <a href="{{url('bookings')}}"> <i class="icon-home"></i>Reservaciones</a>
                 </li>
+               
                 <li>
                   <a href="{{url('view_gallery')}}"> <i class="icon-home"></i>Galería</a>
+                </li>
+                
+                <li>
+                  <a href="{{url('all_messages')}}"> <i class="icon-home"></i>Mensajes</a>
                 </li>
 
                 
